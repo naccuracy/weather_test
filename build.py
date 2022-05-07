@@ -27,7 +27,7 @@ def download_and_extract(url_str, dir_path, file_name):
     ar_path = out_path + ar_ext
     if (not os.path.exists(ar_path)):
         print("DOWNLOAD: " + ar_path)
-        subprocess.run(["curl", url_str, '--output', ar_path])
+        subprocess.run(["curl", '-L', url_str, '--output', ar_path])
 
     if (not os.path.exists(out_path)):
         print("EXTRACT: " + ar_path)
@@ -100,6 +100,7 @@ download_and_extract('https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/' + LIBSSL + 
 download_and_extract('https://curl.se/download/' + LIBCURL + TGZ, LIBSBUILD, LIBCURL)
 download_and_extract('https://github.com/open-source-parsers/jsoncpp/archive/refs/tags/' + LIBJSON_VER + TGZ, LIBSBUILD, LIBJSON)
 download_and_extract('https://codeload.github.com/glfw/glfw/tar.gz/3.3.7', LIBSBUILD, LIBGLFW)
+
 #--------------------------------------------------build libs
 #--------------------------------------------------zlib
 sources_dir = os.path.join(LIBSBUILD, LIBZLIB)
