@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=weather
+GenericName=weather
+Comment=get current weather
+Exec=../weather %f
+Icon=icon.ico
+Terminal=false
+Type=Application
+Categories=Accessories
+
